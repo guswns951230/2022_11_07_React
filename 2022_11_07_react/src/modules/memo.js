@@ -9,13 +9,12 @@ const memo = (state = initialState, action) => {
     case "addMemo":
       console.log(action.payload);
       const newMemo = {
-        id: state.id,
         name: action.payload.name,
         text: action.payload.text,
         date: `${new Date().getMonth() + 1}/${new Date().getDate()}`,
       };
       const newMemoList = state.memolist.concat(newMemo);
-      return { ...state, memolist: newMemoList, id: state.id + 1 };
+      return { ...state, memolist: newMemoList };
     default:
       return state;
   }

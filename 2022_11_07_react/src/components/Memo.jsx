@@ -38,8 +38,8 @@ const Memo = () => {
         <button onClick={addMemo}>작성</button>
       </div>
 
-      {memolist.map((memo) => (
-        <li>
+      {memolist.map((memo, index) => (
+        <li key={index}>
           {memo.name} : {memo.text} {memo.date}
         </li>
       ))}
